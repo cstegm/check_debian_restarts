@@ -1,0 +1,12 @@
+#!/bin/bash
+
+checkrestartoutput=`/usr/sbin/checkrestart`
+
+if [ "$checkrestartoutput" == "Found 0 processes using old versions of upgraded files" ]
+then
+  echo $checkrestartoutput
+  exit 0
+else
+  echo $checkrestartoutput
+  exit 1
+fi
